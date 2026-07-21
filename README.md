@@ -87,7 +87,7 @@ O cenário de **Login com sucesso** foi automatizado utilizando Cypress através
 Arquivo responsável pelo teste:
 
 ```
-cypress/tests/ui/exercicio-1-login.spec.js
+feature-login/exercicio-1-login.spec.js
 ```
 
 ---
