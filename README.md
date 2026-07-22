@@ -1,141 +1,348 @@
-# 🚀 Cypress Real World App - QA Automation Portfolio
+# 🚀 Real World App (RWA) | Cypress E2E Automation
 
 ## 📌 Sobre o Projeto
 
-Este projeto tem como objetivo desenvolver uma suíte de testes automatizados utilizando **Cypress**, aplicando conceitos e boas práticas de **Quality Assurance (QA)** em um ambiente próximo ao encontrado em projetos reais de desenvolvimento de software.
+Este projeto apresenta uma suíte de testes automatizados desenvolvida utilizando Cypress sobre o Real World App (RWA), uma aplicação criada pela equipe do Cypress para demonstrar cenários reais de testes End-to-End.
 
-A aplicação utilizada como base é o **Real World App (RWA)**, desenvolvido pela equipe do Cypress, uma aplicação que simula um ambiente financeiro, permitindo funcionalidades como criação de usuários, autenticação, gerenciamento de contas e transferências entre usuários.
+O desenvolvimento foi realizado como parte dos estudos do curso Guardião da Qualidade, aplicando conceitos de Quality Assurance, criação de casos de teste e automação de testes funcionais.
 
-O projeto será desenvolvido de forma incremental, adicionando novas funcionalidades, cenários de testes automatizados e melhorias na estrutura do projeto conforme a evolução dos estudos.
+O objetivo é aplicar conceitos de **Quality Assurance (QA)** através da elaboração de casos de teste e da automação de testes End-to-End (E2E) com Cypress, simulando um ambiente próximo ao encontrado em projetos reais.
 
----
-
-# 🎯 Objetivo do Projeto
-
-Construir uma suíte de testes automatizados utilizando **Cypress**, validando funcionalidades da aplicação através de cenários de testes funcionais.
-
-Os testes serão desenvolvidos considerando:
-
-- Validação de funcionalidades;
-- Cenários positivos e negativos;
-- Boas práticas de automação;
-- Organização e manutenção dos testes;
-- Evolução contínua da suíte de testes.
+A evolução deste projeto acompanha minha jornada de aprendizado, documentando tanto os requisitos propostos quanto as implementações realizadas.
 
 ---
 
-# 🔗 Referências do Projeto
+# 📚 Contexto do Exercício
 
-## Aplicação Base
+O **Real World App (RWA)** é uma aplicação desenvolvida pela equipe do Cypress para demonstrar padrões, estratégias e boas práticas de testes automatizados em uma aplicação real.
 
-Este projeto utiliza como base o **Cypress Real World App (RWA)**, desenvolvido pela equipe do Cypress.
+A aplicação simula um sistema financeiro, permitindo funcionalidades como:
 
-Repositório oficial:
+* Autenticação de usuários;
+* Cadastro de novos usuários;
+* Gerenciamento de contas bancárias;
+* Transferências entre usuários;
+* Histórico de transações.
+
+Neste exercício, o foco é praticar a criação de casos de teste e sua automação utilizando Cypress.
+
+**Repositório oficial do projeto**
 
 https://github.com/cypress-io/cypress-realworld-app
 
 ---
 
-## Repositório deste Projeto
+# 🎯 Objetivo
 
-Implementação dos exercícios e automações desenvolvidas durante os estudos de Cypress:
+Desenvolver uma suíte de testes automatizados para validar funcionalidades do Real World App utilizando Cypress.
 
-https://github.com/raphaelcoelho-hub/cypress-realworld-app
+Durante o projeto são aplicados conceitos como:
 
----
-
-# 🧪 Features Automatizadas
-
-## 🔐 Feature: Login
-
-### ✅ CT01 - Login com sucesso
-
-**Status:** Concluído
+* Escrita de Casos de Teste;
+* Testes Funcionais;
+* Testes End-to-End (E2E);
+* Cenários positivos e negativos;
+* Organização da suíte de testes;
+* Boas práticas de automação;
+* Evolução contínua da arquitetura do projeto.
 
 ---
 
-## Objetivo
+# 📋 Requisitos do Exercício
 
-Validar que um usuário cadastrado consegue realizar autenticação na aplicação utilizando credenciais válidas.
+## Criação dos Casos de Teste
 
----
+### Login
 
-## Cenário de Teste
+* [x] Login com sucesso
+* [x] Login com credenciais inválidas
 
-### Pré-condição:
+### Registro de Usuário
 
-- Usuário deve possuir cadastro válido na aplicação.
-
-### Passos realizados:
-
-1. Acessar a tela de login;
-2. Informar usuário válido;
-3. Informar senha válida;
-4. Clicar no botão de login.
-
-### Resultado esperado:
-
-- Usuário deve ser autenticado com sucesso;
-- Sistema deve permitir o acesso à aplicação.
+* [ ] Registro de novo usuário
+* [ ] Registro com informações incompletas
 
 ---
 
-# 🤖 Automação com Cypress
+## Automação dos Casos de Teste
 
-O cenário de **Login com sucesso** foi automatizado utilizando Cypress através de um teste **End-to-End (E2E)**.
+### Login
 
-Arquivo responsável pelo teste:
+* [x] Login com sucesso
+* [x] Login com credenciais inválidas
 
-```
-feature-login/exercicio-1-login.spec.js
-```
+### Registro
 
----
-
-# 📊 Status do Projeto
-
-| Feature | Cenário | Status |
-|---|---|---|
-| Login | Login com usuário válido | ✅ Concluído |
-| Login | Login com credenciais inválidas | ⏳ Pendente |
-| Cadastro | Registro de novo usuário | ⏳ Pendente |
-| Cadastro | Registro com dados incompletos | ⏳ Pendente |
+* [ ] Registro com sucesso
+* [ ] Registro inválido
 
 ---
 
 # 🛠️ Tecnologias Utilizadas
 
-- Cypress
-- JavaScript
-- Node.js
-- VS Code
-- Git
-- GitHub
+* Cypress
+* JavaScript
+* Node.js
+* Git
+* GitHub
+* Visual Studio Code
+
+---
+
+# 📁 Estrutura do Projeto
+
+```text
+cypress/
+│
+├── downloads/
+├── fixtures/
+├── screenshots/
+├── support/
+├── tests/
+│   └── ui/
+│       └── login.spec.js
+└── videos/
+
+cypress.config.ts
+package.json
+README.md
+```
+
+*A estrutura será atualizada conforme novas features forem implementadas.*
+
+---
+
+# ▶️ Como Executar
+
+Clone o projeto
+
+```bash
+git clone https://github.com/raphaelcoelho-hub/cypress-realworld-app.git
+```
+
+Entre na pasta
+
+```bash
+cd cypress-realworld-app
+```
+
+Instale as dependências
+
+```bash
+npm install
+```
+
+Inicie o projeto seguindo as instruções do repositório oficial do Cypress Real World App.
+
+Execute os testes
+
+Modo interativo
+
+```bash
+npx cypress open
+```
+
+Modo headless
+
+```bash
+npx cypress run
+```
+
+---
+
+# 🧪 Casos de Teste
+
+## 🔐 Feature: Login
+
+---
+
+### ✅ CT01 — Login com sucesso
+
+**Status:** Concluído
+
+### Requisito
+
+Verificar se um usuário válido consegue acessar a aplicação utilizando credenciais válidas.
+
+### Objetivo
+
+Validar o fluxo de autenticação de um usuário previamente cadastrado.
+
+### Pré-condições
+
+* Aplicação em execução;
+* Backend iniciado;
+* Usuário cadastrado;
+* Página `/signin` acessível.
+
+### Passos
+
+1. Acessar a tela de Login;
+2. Informar usuário válido;
+3. Informar senha válida;
+4. Clicar em Login.
+
+### Resultado Esperado
+
+* Usuário autenticado com sucesso;
+* Redirecionamento para a página inicial.
+
+### Arquivo
+
+`cypress/tests/ui/login.spec.js`
+
+---
+
+### ✅ CT02 — Login com credenciais inválidas
+
+**Status:** Concluído
+
+### Requisito
+
+Garantir que usuários não consigam acessar o sistema utilizando credenciais inválidas.
+
+### Objetivo
+
+Validar a exibição da mensagem de erro durante tentativas de autenticação inválidas.
+
+### Cenários Cobertos
+
+* Usuário incorreto;
+* Senha incorreta;
+* Usuário e senha incorretos.
+
+### Passos
+
+1. Acessar Login;
+2. Informar credenciais inválidas;
+3. Clicar em Login.
+
+### Resultado Esperado
+
+* Login não realizado;
+* Permanecer na tela de autenticação;
+* Exibir a mensagem:
+
+> `Username or password is invalid`
+
+### Arquivo
+
+`cypress/tests/ui/login.spec.js`
+
+---
+
+## 👤 Feature: Registro de Usuário
+
+### ⏳ CT03 — Registro com sucesso
+
+**Status:** Pendente
+
+**Descrição**
+
+Verificar se um novo usuário consegue realizar seu cadastro utilizando informações válidas.
+
+---
+
+### ⏳ CT04 — Registro com informações incompletas
+
+**Status:** Pendente
+
+**Descrição**
+
+Garantir que o sistema exiba mensagens de validação ao tentar registrar um usuário sem preencher todos os campos obrigatórios.
+
+---
+
+# 🤖 Automação
+
+## Arquivos Implementados
+
+| Arquivo                   | Feature |
+| ------------------------- | ------- |
+| login.spec.js | Login   |
+
+---
+
+## Recursos Utilizados
+
+* Testes End-to-End (E2E)
+* Assertions do Cypress
+* Seletores CSS
+* Validação de mensagens de erro
+
+---
+
+# 📊 Status do Projeto
+
+| Feature  | Caso de Teste        | Documentado | Automatizado |
+| -------- | -------------------- | ----------- | ------------ |
+| Login    | Login com sucesso    | ✅           | ✅            |
+| Login    | Login inválido       | ✅           | ✅            |
+| Registro | Cadastro com sucesso | ✅           | ⏳            |
+| Registro | Cadastro inválido    | ✅           | ⏳            |
+
+---
+
+# 📈 Roadmap
+
+## Exercícios
+
+* [x] Login com sucesso
+* [x] Login inválido
+* [ ] Registro de usuário
+* [ ] Registro inválido
+
+---
+
+## Evolução Técnica
+
+* [ ] Refatorar estrutura dos testes
+* [ ] Criar Custom Commands
+* [ ] Utilizar Fixtures
+* [ ] Melhorar reutilização de código
+* [ ] Configurar geração de relatórios
+* [ ] Configurar GitHub Actions
+
+---
+
+# 📅 Histórico de Evolução
+
+## v0.1
+
+* Configuração inicial do projeto;
+* Estrutura do Cypress;
+* Organização do ambiente.
+
+## v0.2
+
+* Criação dos casos de teste de Login;
+* Automação dos cenários de Login;
+* Documentação do projeto.
+
+## Próximas versões
+
+* Registro de usuários;
+* Transferências;
+* Contas bancárias;
+* Refatoração da arquitetura;
+* Integração contínua (CI);
+* Relatórios de execução.
 
 ---
 
 # 📚 Aprendizados Aplicados
 
-Neste primeiro ciclo do projeto foram aplicados conhecimentos relacionados a:
+Durante o desenvolvimento deste projeto estão sendo praticados conhecimentos relacionados a:
 
-- Configuração do ambiente Cypress;
-- Estruturação de testes End-to-End;
-- Criação de cenários de teste;
-- Automação do fluxo de autenticação;
-- Organização inicial de uma suíte de testes automatizados.
-
----
-
-# 📈 Próximos Passos
-
-Evolução planejada do projeto:
-
-- [ ] Automatizar login com credenciais inválidas;
-- [ ] Automatizar cadastro de usuário;
-- [ ] Automatizar validações de mensagens de erro;
-- [ ] Implementar melhores práticas de organização dos testes;
-- [ ] Evoluir a estrutura da suíte de automação;
-- [ ] Aplicar recursos avançados do Cypress.
+* Qualidade de Software;
+* Planejamento de Casos de Teste;
+* Testes Funcionais;
+* Testes End-to-End (E2E);
+* Cypress;
+* JavaScript;
+* Organização de suítes de automação;
+* Documentação técnica;
+* Versionamento utilizando Git.
 
 ---
 
@@ -143,4 +350,6 @@ Evolução planejada do projeto:
 
 **Raphael D' Assunção Coelho**
 
-Quality Assurance Analyst | Testes Funcionais & Automação | ERP & Regras de Negócio
+Quality Assurance Analyst
+
+Testes Funcionais • Automação • ERP • Regras de Negócio
