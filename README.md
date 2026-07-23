@@ -59,7 +59,7 @@ Durante o projeto são aplicados conceitos como:
 
 ### Registro de Usuário
 
-* [ ] Registro de novo usuário
+* [x] Registro de novo usuário
 * [ ] Registro com informações incompletas
 
 ---
@@ -73,7 +73,7 @@ Durante o projeto são aplicados conceitos como:
 
 ### Registro
 
-* [ ] Registro com sucesso
+* [x] Registro com sucesso
 * [ ] Registro inválido
 
 ---
@@ -101,6 +101,7 @@ cypress/
 ├── tests/
 │   └── ui/
 │       └── login.spec.js
+|       └── cadastro.spec.js
 └── videos/
 
 cypress.config.ts
@@ -205,6 +206,13 @@ Garantir que usuários não consigam acessar o sistema utilizando credenciais in
 
 Validar a exibição da mensagem de erro durante tentativas de autenticação inválidas.
 
+### Pré-condições
+
+* Aplicação em execução;
+* Backend iniciado;
+* Usuário cadastrado;
+* Página `/signin` acessível.
+
 ### Cenários Cobertos
 
 * Usuário incorreto;
@@ -233,9 +241,9 @@ Validar a exibição da mensagem de erro durante tentativas de autenticação in
 
 ## 👤 Feature: Registro de Usuário
 
-### ⏳ CT03 — Registro com sucesso
+### ✅ CT03 — Registro com sucesso
 
-**Status:** Pendente
+**Status:** Concluído
 
 **Descrição**
 
@@ -243,13 +251,46 @@ Verificar se um novo usuário consegue realizar seu cadastro utilizando informa�
 
 ---
 
+### Objetivo
+
+Validar que um novo usuário pode realizar seu cadastro com sucesso ao preencher corretamente todos os campos obrigatórios.
+
+### Pré-condições
+
+- Aplicação em execução (`http://localhost:3000`);
+- Backend iniciado;
+- Página de cadastro (`/signup`) acessível;
+- O nome de usuário utilizado no teste não deve estar previamente cadastrado.
+
+### Passos
+
+1. Acessar a tela de cadastro;
+2. Informar nome;
+3. Informar sobrenome;
+4. Informar nome de usuário válido;
+5. Informar senha válida;
+6. Confirmar o cadastro.
+
+### Resultado Esperado
+
+- O cadastro deve ser realizado com sucesso;
+- O novo usuário deve ser criado na aplicação;
+- O sistema deve redirecionar o usuário para a página de login (`/signin`), permitindo que ele realize sua primeira autenticação com as credenciais cadastradas.
+
+### Arquivo
+
+`cypress/tests/ui/cadastro.spec.js`
+
+
+
+
 ### ⏳ CT04 — Registro com informações incompletas
 
 **Status:** Pendente
 
 **Descrição**
 
-Garantir que o sistema exiba mensagens de validação ao tentar registrar um usuário sem preencher todos os campos obrigatórios.
+Garantir que o sistema exiba mensagens de erro ao tentar registrar um usuário sem preencher todos os campos obrigatórios.
 
 ---
 
@@ -259,7 +300,8 @@ Garantir que o sistema exiba mensagens de validação ao tentar registrar um usu
 
 | Arquivo                   | Feature |
 | ------------------------- | ------- |
-| login.spec.js | Login   |
+| login.spec.js             | Login   |
+|cadastro.spec.js           |Registro de Usuário|
 
 ---
 
@@ -278,7 +320,7 @@ Garantir que o sistema exiba mensagens de validação ao tentar registrar um usu
 | -------- | -------------------- | ----------- | ------------ |
 | Login    | Login com sucesso    | ✅           | ✅            |
 | Login    | Login inválido       | ✅           | ✅            |
-| Registro | Cadastro com sucesso | ✅           | ⏳            |
+| Registro | Cadastro com sucesso | ✅           | ✅            |
 | Registro | Cadastro inválido    | ✅           | ⏳            |
 
 ---
@@ -289,7 +331,7 @@ Garantir que o sistema exiba mensagens de validação ao tentar registrar um usu
 
 * [x] Login com sucesso
 * [x] Login inválido
-* [ ] Registro de usuário
+* [x] Registro de usuário
 * [ ] Registro inválido
 
 ---
@@ -318,6 +360,12 @@ Garantir que o sistema exiba mensagens de validação ao tentar registrar um usu
 * Criação dos casos de teste de Login;
 * Automação dos cenários de Login;
 * Documentação do projeto.
+
+## v0.3
+
+- Automação do fluxo de registro de novo usuário;
+- Documentação do caso de teste CT03;
+- Atualização do README com o progresso do projeto.
 
 ## Próximas versões
 
