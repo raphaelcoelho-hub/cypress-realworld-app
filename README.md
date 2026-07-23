@@ -321,7 +321,7 @@ Garantir que o sistema exiba mensagens de erro ao tentar registrar um usuário s
 | Login    | Login com sucesso    | ✅           | ✅            |
 | Login    | Login inválido       | ✅           | ✅            |
 | Registro | Cadastro com sucesso | ✅           | ✅            |
-| Registro | Cadastro inválido    | ✅           | ⏳            |
+| Registro | Cadastro inválido    | ⏳            | ⏳            |
 
 ---
 
