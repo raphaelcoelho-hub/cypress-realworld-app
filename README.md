@@ -445,6 +445,6 @@ Durante o desenvolvimento deste projeto estão sendo praticados conhecimentos re
 
 **Raphael D' Assunção Coelho**
 
-Quality Assurance Analyst | Analista de IMplantação de ERP
+Quality Assurance Analyst | Analista de Implantação de ERP
 
 Cypress • Testes Funcionais • Automação de Testes • Implantação de ERP • Regras de Negócio
