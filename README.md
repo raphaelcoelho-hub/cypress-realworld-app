@@ -60,7 +60,7 @@ Durante o projeto são aplicados conceitos como:
 ### Registro de Usuário
 
 * [x] Registro de novo usuário
-* [ ] Registro com informações incompletas
+* [x] Registro com informações incompletas
 
 ---
 
@@ -74,7 +74,7 @@ Durante o projeto são aplicados conceitos como:
 ### Registro
 
 * [x] Registro com sucesso
-* [ ] Registro inválido
+* [x] Registro inválido
 
 ---
 
@@ -253,7 +253,10 @@ Verificar se um novo usuário consegue realizar seu cadastro utilizando informa�
 
 ### Objetivo
 
-Validar que um novo usuário pode realizar seu cadastro com sucesso ao preencher corretamente todos os campos obrigatórios.
+Validar que um novo usuário pode realizar seu cadastro com sucesso ao preencher corretamente todos os campos obrigatórios,
+e que após a conclusão do cadastro, o sistema redireciona corretamente para a página de login. Como validação adicional,
+verificar que o usuário recém-cadastrado consegue realizar autenticação com sucesso utilizando as credenciais criadas 
+durante o teste.
 
 ### Pré-condições
 
@@ -276,6 +279,7 @@ Validar que um novo usuário pode realizar seu cadastro com sucesso ao preencher
 - O cadastro deve ser realizado com sucesso;
 - O novo usuário deve ser criado na aplicação;
 - O sistema deve redirecionar o usuário para a página de login (`/signin`), permitindo que ele realize sua primeira autenticação com as credenciais cadastradas.
+- O usuário recém-cadastrado deve conseguir realizar login com sucesso utilizando as credenciais informadas durante o cadastro
 
 ### Arquivo
 
@@ -286,13 +290,45 @@ Validar que um novo usuário pode realizar seu cadastro com sucesso ao preencher
 
 ### ⏳ CT04 — Registro com informações incompletas
 
-**Status:** Pendente
+**Status:** Cocluído
 
 **Descrição**
 
-Garantir que o sistema exiba mensagens de erro ao tentar registrar um usuário sem preencher todos os campos obrigatórios.
+Garantir que o sistema exiba mensagens de erro e não permita acesso à página de login, ao tentar registrar um usuário sem preencher todos os campos obrigatórios.
 
 ---
+
+### Objetivo
+
+Validar que a aplicação impeça o cadastro de novos usuários quando um ou mais campos
+obrigatórios não forem preenchidos, exibindo mensagens de validação correspondentes.
+
+### Pré-condições
+
+- A aplicação web e o servidor backend devem estar em execução (http://localhost:3000);
+- A página de cadastro (/signup) deve estar acessível.
+
+### Passos
+
+1. Acessar a tela de cadastro;
+2. Preencher apenas parte das informações obrigatórias
+   ou deixarf todos os campos em branco;
+3. Tentar concluir o cadastro clicando no botão de
+   criação da conta;
+
+---
+
+### Resultado Esperado
+
+- O cadastro não deve ser realizado;
+- A aplicação deve exibir mensagens de alerta para os
+  campos obrigatórios não preenchidos;
+- O usuário deve permanecer na tela de cadastro até que
+  todas as informações sejam informadas corretamente;
+
+---
+
+
 
 # 🤖 Automação
 
@@ -321,7 +357,7 @@ Garantir que o sistema exiba mensagens de erro ao tentar registrar um usuário s
 | Login    | Login com sucesso    | ✅           | ✅            |
 | Login    | Login inválido       | ✅           | ✅            |
 | Registro | Cadastro com sucesso | ✅           | ✅            |
-| Registro | Cadastro inválido    | ⏳            | ⏳            |
+| Registro | Cadastro inválido    | ✅           | ✅            |
 
 ---
 
@@ -332,7 +368,7 @@ Garantir que o sistema exiba mensagens de erro ao tentar registrar um usuário s
 * [x] Login com sucesso
 * [x] Login inválido
 * [x] Registro de usuário
-* [ ] Registro inválido
+* [x] Registro inválido
 
 ---
 
@@ -365,7 +401,16 @@ Garantir que o sistema exiba mensagens de erro ao tentar registrar um usuário s
 
 - Automação do fluxo de registro de novo usuário;
 - Documentação do caso de teste CT03;
+- Incvlusão da validação de login com sucesso utilizando o usuário
+  recém-criado.
 - Atualização do README com o progresso do projeto.
+
+## v0.4
+
+- Automação do cenário de registro com informações incompletas;
+- Validação das mensagens de erro para campos obrigatórios;
+- Atualização da documentação do README;
+- Conclusão dos exercícios de Login e Registro de Usuário.
 
 ## Próximas versões
 
@@ -391,6 +436,8 @@ Durante o desenvolvimento deste projeto estão sendo praticados conhecimentos re
 * Organização de suítes de automação;
 * Documentação técnica;
 * Versionamento utilizando Git.
+* Validação completa do fluxo de negócio, garantindo que um usuário recém-cadastrado consiga
+  autenticar-se com sucesso na aplicação.
 
 ---
 
@@ -398,6 +445,6 @@ Durante o desenvolvimento deste projeto estão sendo praticados conhecimentos re
 
 **Raphael D' Assunção Coelho**
 
-Quality Assurance Analyst
+Quality Assurance Analyst | Analista de IMplantação de ERP
 
-Testes Funcionais • Automação • ERP • Regras de Negócio
+Cypress • Testes Funcionais • Automação de Testes • Implantação de ERP • Regras de Negócio

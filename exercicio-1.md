@@ -21,9 +21,10 @@ As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no apli
 +[CONCLUÍDO] Caso de Teste:** Tentar fazer login com credenciais inválidas.
 + Descrição:** Garanta que o sistema exiba uma mensagem de erro ao tentar fazer login com credenciais inválidas (email ou senha incorretos).
 ```
-
-**Caso de Teste:** Registro de novo usuário com sucesso.
-**Descrição:** Verifique se é possível registrar um novo usuário com informações válidas.
+```diff
++[CONCLUÍDO] Caso de Teste:** Registro de novo usuário com sucesso.
++Descrição:** Verifique se é possível registrar um novo usuário com informações válidas.
+```
 
 **Caso de Teste:** Tentar registrar um novo usuário com informações incompletas.
 **Descrição:** Garanta que o sistema exiba mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias.
@@ -86,7 +87,7 @@ Use esse Prompt para te ajudar a criar seu post.
 
 ```
 Crie um post de Linkedin sobre um projeto de automação Cypress que estou realizando pela LumeStack no curso de "Guardião da Qualidade".
-Eu criei casos de teste para a feature de transferencia de dinheiro do projeto Real World App do Cypress IO.
-Eu també automatizei os mesmos casos de teste com o Cypress
+Eu criei casos de teste para as features Login e Cadastro de Usuário do projeto Real World App do Cypress IO.
+Eu também automatizei os mesmos casos de teste com o Cypress
 ```
 Aproveite e mencione a LumeStack no post 😉
