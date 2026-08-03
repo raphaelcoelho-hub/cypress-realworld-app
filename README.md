@@ -62,6 +62,11 @@ Durante o projeto são aplicados conceitos como:
 * [x] Registro de novo usuário
 * [x] Registro com informações incompletas
 
+### Enviar dinheiro
+
+* [x] Enviar dinheiro com saldo suficiente
+* [ ] Enviar dinheiro com saldo insuficiente
+
 ---
 
 ## Automação dos Casos de Teste
@@ -75,6 +80,11 @@ Durante o projeto são aplicados conceitos como:
 
 * [x] Registro com sucesso
 * [x] Registro inválido
+
+### Enviar dinheiro
+
+* [x] Enviar dinheiro com saldo suficiente
+* [ ] Enviar dinheiro com saldo insuficiente
 
 ---
 
@@ -91,23 +101,30 @@ Durante o projeto são aplicados conceitos como:
 
 # 📁 Estrutura do Projeto
 
-```text
+
 cypress/
 │
-├── downloads/
 ├── fixtures/
-├── screenshots/
 ├── support/
-├── tests/
-│   └── ui/
-│       └── login.spec.js
-|       └── cadastro.spec.js
-└── videos/
+└── tests/
+    ├── api/
+    ├── demo/
+    └── ui/
+        ├── auth.spec.ts
+        ├── bankaccounts.spec.ts
+        ├── cadastro.spec.js
+        ├── login.spec.js
+        ├── new-transaction.spec.ts
+        ├── notifications.spec.ts
+        ├── transacao.spec.js
+        ├── transaction-feeds.spec.ts
+        ├── transaction-view.spec.ts
+        └── user-settings.spec.ts
 
 cypress.config.ts
 package.json
 README.md
-```
+
 
 *A estrutura será atualizada conforme novas features forem implementadas.*
 
@@ -286,9 +303,7 @@ durante o teste.
 `cypress/tests/ui/cadastro.spec.js`
 
 
-
-
-### ⏳ CT04 — Registro com informações incompletas
+### ✅ CT04 — Registro com informações incompletas
 
 **Status:** Cocluído
 
@@ -328,6 +343,86 @@ obrigatórios não forem preenchidos, exibindo mensagens de validação correspo
 
 ---
 
+---
+
+## 💸 Feature: Enviar Dinheiro
+
+### ✅ CT05 — Enviar dinheiro com saldo suficiente
+
+**Status:** Concluído
+
+### Descrição
+
+Verificar se um usuário consegue realizar uma transferência quando possui saldo suficiente em conta.
+
+### Objetivo
+
+Validar que o sistema conclui a transferência com sucesso quando o saldo disponível é maior ou igual ao valor informado.
+
+### Pré-condições
+
+- Aplicação em execução (`http://localhost:3000`);
+- Backend iniciado;
+- Usuário autenticado;
+- Conta com saldo suficiente.
+
+### Passos
+
+1. Acessar a funcionalidade **Enviar Dinheiro**;
+2. Selecionar um destinatário;
+3. Informar um valor dentro do saldo disponível;
+4. Confirmar a transferência.
+
+### Resultado Esperado
+
+- A transferência deve ser realizada com sucesso;
+- O saldo deve ser atualizado;
+- A transação deve constar no histórico.
+
+### Arquivo
+
+`cypress/tests/ui/transferencia.spec.js`
+
+---
+
+### ⏳ CT06 — Enviar dinheiro com saldo insuficiente
+
+**Status:** Automatizado (Aguardando validação da aplicação)
+
+### Descrição
+
+Garantir que o sistema exiba uma mensagem de erro ao tentar enviar dinheiro sem saldo suficiente.
+
+### Objetivo
+
+Validar que a aplicação impeça transferências cujo valor seja superior ao saldo disponível.
+
+### Pré-condições
+
+- Aplicação em execução (`http://localhost:3000`);
+- Backend iniciado;
+- Usuário autenticado;
+- Conta com saldo insuficiente.
+
+### Passos
+
+1. Acessar a funcionalidade **Enviar Dinheiro**;
+2. Selecionar um destinatário;
+3. Informar um valor superior ao saldo disponível;
+4. Confirmar a transferência.
+
+### Resultado Esperado
+
+- A transferência não deve ser concluída;
+- O sistema deve exibir uma mensagem de saldo insuficiente.
+
+### Observação
+
+> Durante os testes realizados na versão local da Real World App, foi identificado que a aplicação permite concluir a transferência mesmo quando o saldo é insuficiente. A automação foi implementada conforme o requisito do exercício e encontra-se aguardando validação da comunidade da LumeStack sobre essa divergência entre o comportamento esperado e o observado.
+
+### Arquivo
+
+`cypress/tests/ui/transferencia.spec.js`
 
 
 # 🤖 Automação
@@ -338,6 +433,7 @@ obrigatórios não forem preenchidos, exibindo mensagens de validação correspo
 | ------------------------- | ------- |
 | login.spec.js             | Login   |
 |cadastro.spec.js           |Registro de Usuário|
+|transacao.spec.js          |Enviar dinheiro|
 
 ---
 
@@ -359,6 +455,11 @@ obrigatórios não forem preenchidos, exibindo mensagens de validação correspo
 | Registro | Cadastro com sucesso | ✅           | ✅            |
 | Registro | Cadastro inválido    | ✅           | ✅            |
 
+
+| Feature       | Caso de Teste                 | Documentado | Automatizado |
+| ------------- | ----------------------------- | ----------- | ------------ |
+|Enviar dinheiro| Enviar com saldo suficiente   | ✅          | ✅          |
+|Enviar dinheiro| Enviar com saldo insuficiente | ⏳           | ⏳          |
 ---
 
 # 📈 Roadmap
@@ -369,6 +470,8 @@ obrigatórios não forem preenchidos, exibindo mensagens de validação correspo
 * [x] Login inválido
 * [x] Registro de usuário
 * [x] Registro inválido
+* [x] Enviar dinheiro com saldo suficiente
+* [ ] Enviar dinheiro com saldo insuficiente
 
 ---
 
@@ -412,11 +515,16 @@ obrigatórios não forem preenchidos, exibindo mensagens de validação correspo
 - Atualização da documentação do README;
 - Conclusão dos exercícios de Login e Registro de Usuário.
 
-## Próximas versões
+## v0.5
 
-* Registro de usuários;
-* Transferências;
-* Contas bancárias;
+- Criação dos casos de teste da feature **Enviar Dinheiro**;
+- Automação do cenário de transferência com saldo suficiente;
+- Automação do cenário de saldo insuficiente;
+- Registro da divergência identificada entre o comportamento esperado pelo exercício e a   implementação atual da Real World App;
+- Atualização da documentação do README.
+
+## Próximas versões
+* Visualizar histórico de transações;
 * Refatoração da arquitetura;
 * Integração contínua (CI);
 * Relatórios de execução.
