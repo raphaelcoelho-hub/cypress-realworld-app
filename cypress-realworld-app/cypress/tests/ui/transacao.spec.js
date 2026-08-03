@@ -1,6 +1,6 @@
 describe('Feature: Transação-Enviar Dinheiro', () => {
 
-  // Limpa os cookies e o localStorage antes dos testes para garantir isolamento
+  // Retorna à página inicial antes de cada teste
   beforeEach(() => {
     cy.visit('/signin');
   });
@@ -35,18 +35,18 @@ describe('Feature: Transação-Enviar Dinheiro', () => {
   
  // it('CT-02: Deve exibir mensagem de erro ao tentar enviar dinheiro com saldo insuficiente', () => {
     // 1. Login com usuário sem saldo suficiente (Ana Silva)
- //   cy.get('[data-test="signin-username"]').type('bruno.souza');
+ //   cy.get('[data-test="signin-username"]').type('Ana.Silva');
  //   cy.get('[data-test="signin-password"]').type('123456');
- //   cy.get('[data-test="signin-submit"]').click();;
+ //   cy.get('[data-test="signin-submit"]').click();
     
     // 2. Navegar para a tela de nova transação
 //    cy.get('[data-test="nav-top-new-transaction"]').click();
 
-    // 3. Selecionar o destinatário (Diego Alves)
-  //  cy.get('[data-test="user-list-search-input"]').type('Raphael Coelho');
-   // cy.get('[data-test^="user-option-"]').contains('Raphael Coelho').click();
+    // 3. Selecionar o destinatário (Bruno Souza)
+  //  cy.get('[data-test="user-list-search-input"]').type('Bruno Souza');
+   // cy.get('[data-test^="user-option-"]').contains('Bruno Souza').click();
 
-    // 4. Preencher um valor superior ao saldo em conta ($500.00)
+    // 4. Preencher um valor superior ao saldo em conta ($5000.00)
    // cy.get('#amount').type('2000');
     //cy.get('#transaction-create-description-input').type('Aluguel');
 
@@ -54,6 +54,6 @@ describe('Feature: Transação-Enviar Dinheiro', () => {
    // cy.get('[data-test="transaction-create-submit-payment"]').click();
 
     // 6. Resultado Esperado: O sistema impediu o envio exibindo mensagem de erro
-   // cy.get('[data-test="alert-bar"]').should('be.visible').and('contain', '');
+   // cy.get('[data-test="alert-bar"]').should('be.visible').and('contain', 'Insufficient funds');
   });
 
