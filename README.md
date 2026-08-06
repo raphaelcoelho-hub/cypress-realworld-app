@@ -48,6 +48,7 @@ cypress/
     ├── demo/
     └── ui/
         ├── cadastro.spec.js
+        ├── historico.spec.js
         ├── login.spec.js
         └── transacao.spec.js
 
@@ -246,21 +247,78 @@ A automação foi mantida exatamente como esperado pelo caso de teste para evide
 
 ---
 
+---
+
+## 📜 Histórico de Transações
+
+### ✅ CT07 — Visualizar histórico de transações com sucesso
+
+**Objetivo**
+
+Validar que um usuário consiga visualizar corretamente seu histórico de transações.
+
+**Resultado esperado**
+
+- O histórico de transações deve ser exibido;
+- As transações realizadas devem aparecer corretamente na listagem.
+
+**Arquivo**
+
+`cypress/tests/ui/historico.spec.js`
+
+---
+
+### ✅ CT08 — Visualizar histórico de um usuário sem transações
+
+**Objetivo**
+
+Validar que o sistema informe ao usuário quando não existirem transações registradas.
+
+**Resultado esperado**
+
+- O histórico deve ser exibido sem transações;
+- O sistema deve apresentar uma mensagem informando que o usuário não possui transações anteriores.
+
+
+**Arquivo**
+
+`cypress/tests/ui/historico.spec.js`
+
+---
+
+### ✅ CT09 — Validação completa do fluxo de transações (End-to-End)
+
+**Objetivo**
+
+Validar o fluxo completo de uma solicitação de pagamento entre dois usuários, garantindo que a transação seja registrada corretamente para o remetente e para o destinatário.
+
+**Resultado esperado**
+
+- A solicitação de pagamento deve ser criada com sucesso;
+- O remetente deve visualizar a transação em seu histórico;
+- O destinatário também deve visualizar a mesma transação em seu histórico.
+
+**Arquivo**
+
+`cypress/tests/ui/historico.spec.js`
+
+---
+
 ## 📊 Status do projeto
 
-| Feature | Documentado | Automatizado |
-|----------|-------------|--------------|
-| Login | ✅ | ✅ |
-| Registro de Usuário | ✅ | ✅ |
-| Enviar Dinheiro | ✅ | ✅* |
+| Feature                  | Documentado  | Automatizado |
+|--------------------------|--------------|--------------|
+| Login                    | ✅          | ✅           |
+| Registro de Usuário      | ✅          | ✅           |
+| Enviar Dinheiro          | ✅          | ✅*          |
+| Histórico de Transações  | ✅          | ✅           |
+
 
 > *O cenário de saldo insuficiente está automatizado e evidencia um bug conhecido na aplicação.*
 
 ---
 
 ## 📈 Próximos passos
-- Visualizar histórico de transações com sucesso;
-- Tentar visualizar o histórico de transações de um usuário sem transações anteriores;
 - Refatorar a estrutura dos testes;
 - Criar Custom Commands;
 - Utilizar Fixtures;
